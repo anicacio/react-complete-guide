@@ -4,7 +4,7 @@ import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
 import ExpensesFilter from "./ExpensesFilter";
 
-const Expanses = (props) => {
+const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState("2020");
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
@@ -15,6 +15,7 @@ const Expanses = (props) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
+      {console.log(props.items)}
       {props.items.map((expense) => (
         <ExpenseItem
           title={expense.title}
@@ -26,4 +27,4 @@ const Expanses = (props) => {
   );
 };
 
-export default Expanses;
+export default Expenses;
